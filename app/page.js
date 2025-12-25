@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { Globe, Calendar, Send, Download, Sparkles, Clock, TrendingUp, MessageSquare, Target, Zap } from 'lucide-react';
 
