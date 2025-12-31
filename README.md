@@ -1,223 +1,195 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-=======
 # 🎯 WellPack Prediction Event
 
-> 🚀 *Event-aware campaign prediction tool for WellPack.*
-> 🗕️ Integrates local & national events to optimize SMS / RCS marketing timing and messaging.
-> ⚙️ Built with Python, data analysis, and API integration.
+> 🚀 Event-aware campaign prediction tool for WellPack
+> 📅 Integrates local and national events to optimize SMS and RCS marketing timing
+> ⚙️ Built with Next.js for the interface and Python for data analysis
 
 ---
 
 ## 📖 Overview
 
-**Prediction Event** is a module designed to enhance **WellPack’s existing campaign prediction tool**.
-It leverages real-world event data (local and national) to improve predictions for **SMS and RCS marketing campaigns**, helping marketers choose the **best time and message** to engage users.
+**WellPack Prediction Event** is a hybrid **web + data science project** designed to enhance WellPack’s campaign prediction capabilities.
 
-For example:
+The core idea is simple: **campaign performance depends on context**.
+Real-world events such as sports matches, cultural festivals, or public events strongly influence user attention and engagement.
 
-* ⚽ During a major football match, a fast-food campaign may perform **better**.
-* 🏡 A real-estate campaign sent right before the same event might be **ignored**.
-  This module automatically accounts for such event-based effects.
+This project combines:
 
----
+* A **Next.js web interface** deployed on Vercel
+* A **Python-based analysis layer** that studies event impact on campaign performance
 
-## 🎯 Goals
+Example:
 
-* ✅ Integrate real-world event data into the campaign prediction engine.
-* ✅ Detect events occurring on proposed campaign dates (local or national).
-* ✅ Evaluate each event’s potential **impact by sector**.
-* ✅ Recommend **optimal send times** and **messaging windows** based on context.
-* ✅ Deliver clean, documented, and integrable Python code.
+* ⚽ A fast-food campaign sent before a football match may perform better
+* 🏡 A real-estate campaign at the same time may be ignored
+
+The system is designed to **account for these effects automatically**.
 
 ---
 
-## ⚙️ Specifications
+## 🎯 Objectives
 
-**Inputs:**
-
-* Proposed campaign dates
-* Geographic area
-* Campaign message & sector
-
-**Process:**
-
-1. Fetch events from public APIs (Google Events, Eventbrite, etc.).
-2. Match event categories (sports, culture, politics…) to relevant sectors.
-3. Adjust campaign timing predictions accordingly.
-
-**Outputs:**
-
-* 🗕️ Suggested send time
-* 🗓️ List of relevant nearby events
-* 📊 Event impact score
-* 💬 Recommendation summary
-
-**Tech Stack:**
-`Python`, `Pandas`, `Requests`, `scikit-learn`, `Jupyter`, `API integrations`
+* Integrate real-world event data into campaign prediction logic
+* Detect relevant local or national events for a given campaign date
+* Evaluate event impact by business sector
+* Recommend optimal sending windows and messaging context
+* Provide a clean and reusable project structure suitable for production
 
 ---
 
 ## 🧠 Methodology
 
-1. **Data Integration**
-   Merge WellPack’s historical campaign dataset (~30k rows) with live event data.
+1. **Data Exploration**
+   Historical campaign data is explored using Python and Jupyter notebooks
 
-2. **Event Impact Analysis**
-   Define scoring rules per event type (e.g., “sports = +fast food / –finance”).
+2. **Event Context Analysis**
+   Events are categorized (sports, culture, public events) and mapped to campaign sectors
 
-3. **Model Adaptation**
-   Adjust timing predictions based on detected event overlaps.
+3. **Impact Reasoning**
+   Rules and metrics are defined to estimate positive or negative impact
 
-4. **Evaluation**
-   Test against past campaigns and measure engagement uplift.
+4. **Visualization & Interpretation**
+   Results are visualized and summarized to support decision making
 
 ---
 
-## 🧉 Repository Structure
+## 🗂️ Repository Structure
 
 ```
-prediction-event/
+WellpackProject/
 │
-├── README.md
-├── requirements.txt
+├── web/                    # Next.js application (Vercel deployment)
+│   ├── app/
+│   ├── public/
+│   ├── package.json
+│   └── next.config.mjs
+│
+├── notebooks/              # Jupyter notebooks (analysis & exploration)
+│   └── wellpack_analysis.ipynb
+│
+├── data/                   # Raw and processed datasets
+│
+├── src/                    # Python utilities (analysis, preprocessing)
+│
+├── results/                # Figures and tables generated from analysis
+│
+├── requirements.txt        # Python dependencies
 ├── .gitignore
-├── LICENSE
-│
-├── data/
-│   ├── sample_data.csv
-│   └── event_samples.json
-│
-├── notebooks/
-│   └── exploration.ipynb
-│
-├── src/
-│   ├── main.py
-│   ├── event_api.py
-│   ├── preprocess.py
-│   ├── prediction_model.py
-│   ├── impact_analysis.py
-│   └── utils.py
-│
-├── tests/
-│   ├── test_event_api.py
-│   └── test_prediction_model.py
-│
-└── docs/
-    ├── technical_documentation.md
-    ├── integration_guide.md
-    └── architecture_diagram.png
+└── README.md
 ```
 
 ---
 
-## 🧪 Installation & Usage
+## ⚙️ Tech Stack
+
+**Frontend**
+
+* Next.js
+* JavaScript
+* CSS
+* Vercel
+
+**Data & Analysis**
+
+* Python
+* Pandas
+* Jupyter Notebook
+* API-based data collection
+
+---
+
+## 🚀 Getting Started (Web App)
 
 ```bash
-# Clone the repo
-git clone https://github.com/wellpack/wellpack-prediction-event.git
-cd wellpack-prediction-event
+cd web
+npm install
+npm run dev
+```
 
-# Install dependencies
+Then open:
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧪 Data Analysis
+
+Install Python dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-```bash
-# Run the module
-python src/main.py
-```
-
-Or open `examples/example_usage.ipynb` for a Jupyter Notebook demo.
-
----
-
-## 🧯 Example Output
-
-```
-🗕️ Proposed campaign: 2025-11-12
-📍 Location: Paris
-🏷️ Sector: Fast Food
-
-✅ Detected Events:
-- UEFA Champions League Match (20:45 CET)
-- Local Food Festival (12:00 CET)
-
-📊 Recommendation:
-Best send window: 18:30–19:30 CET  
-Reason: Audience engagement high before sports events.
-```
-
----
-
-## 🗖️ Project Milestones
-
-| Phase                         | Description                      | Duration |
-| ----------------------------- | -------------------------------- | -------- |
-| **1. Setup & Review**         | Explore dataset & existing tool  | Week 1–2 |
-| **2. Event Data Integration** | Connect APIs & clean data        | Week 3–4 |
-| **3. Impact Analysis**        | Link events to campaign outcomes | Week 5–6 |
-| **4. Testing & Delivery**     | Validate & document              | Week 7   |
-
----
-
-## 👥 Team
-
-**Company:** [WellPack](https://www.wellpack.fr)
-**Project Manager:** Meddy Neboud – [meddy.neboud@wellpack.fr](mailto:meddy.neboud@wellpack.fr)
-**Team:** Data & AI Group (2025)
-
----
-
-## 🌟 Acknowledgements
-
-Special thanks to the WellPack team for their expertise in digital marketing, data collection, and RCS innovation.
-
----
-
-### 💬 “Turning events into insights — and insights into smarter campaigns.”
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
->>>>>>> 97371cf2d3bc7155937c402432e56f2dd0a3c39d
-
-## Getting Started
-
-First, run the development server:
+Open the notebook:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+jupyter notebook notebooks/wellpack_analysis.ipynb
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-<<<<<<< HEAD
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-=======
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
->>>>>>> 97371cf2d3bc7155937c402432e56f2dd0a3c39d
+## 📌 Notes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* The `web/` folder is the Vercel root directory
+* Data science components are intentionally separated from the frontend
+* This structure reflects real-world production and analytics workflows
 
-## Learn More
+---
+# 👥✨ Team
+## 🚀 Core Contributors
 
-To learn more about Next.js, take a look at the following resources:
+🧠📊 **Lead Data & Logic Engineer**  
+**Dhruvilsinh Rathod**  
+>🔹 Event-impact logic & reasoning  
+>🔹 Data processing and analytical workflows  
+>🔹 Prediction rules and sector-based insights  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔗 GitHub: [GitHub.com/Drathod-24](https://github.com/Drathod-24)  
+📧 Email: [rathod.dhruvilsinh@aivancity.education](mailto:rathod.dhruvilsinh@aivancity.education)  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+💻🎨🌐 **Web & Integration Developer**  
+**Meet Patel (Stark)**  
+>🔹 Next.js frontend development  
+>🔹 Project architecture and repository structure  
+>🔹 Vercel deployment and system integration  
+>🔹 UI consistency and data presentation  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🔗 GitHub: [GitHub.com/MeetStark34](https://github.com/MeetStark34)  
+📧 Email: [meet.patel@aivancity.education](mailto:meet.patel@aivancity.education)  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-<<<<<<< HEAD
-=======
->>>>>>> 8427313 (Initial Commit)
->>>>>>> 97371cf2d3bc7155937c402432e56f2dd0a3c39d
+---
+
+📝🧪✅ **Documentation & Quality Analyst**  
+**Harshinka Singh**  
+>🔹 Technical documentation and README structure  
+>🔹 Requirement tracking and clarity checks  
+>🔹 Result validation and quality assurance  
+
+🔗 GitHub: [GitHub.com/HarshikaOnGit](https://github.com/HarshikaOnGit)  
+📧 Email: [harshika.singh@aivancity.education](mailto:harshika.singh@aivancity.education)  
+
+---
+
+🔍📚📈 **Research & Validation Associate**  
+**Kashish Mahavar**  
+>🔹 Background research and domain understanding  
+>🔹 Data sanity checks and validation scenarios  
+>🔹 Insight verification and edge-case testing  
+
+🔗 GitHub: [GitHub.com/KashishMahavar](https://github.com/KashishMahavar)  
+📧 Email: [kashish.mahavar@aivancity.education](mailto:kashish.mahavar@aivancity.education)  
+
+---
+
+# 🌟 Acknowledgements
+
+Thanks to the WellPack team for insights into digital marketing, campaign data, and event-driven communication strategies.
+
+---
+
+**Turning events into insights... and insights into smarter campaigns.**
+
+---
+
+# ✨ Built with curiosity, collaboration, and a lot of coffee ☕
