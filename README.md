@@ -54,28 +54,50 @@ The system is designed to **account for these effects automatically**.
 ---
 
 ## 🗂️ Repository Structure
-
+### Main Branch 🪺🌿
 ```
 WellpackProject/
 │
 ├── web/                    # Next.js application (Vercel deployment)
 │   ├── app/
 │   ├── public/
+│   │
 │   ├── package.json
-│   └── next.config.mjs
+│   ├── js.config.json
+│   ├── next.config.mjs
+│   ├── package-lock.json
+│   ├── eslint.config.mjs
+│   └── postcss.config.mjs
 │
-├── notebooks/              # Jupyter notebooks (analysis & exploration)
+├── notebooks/              # Python File & Jupyter notebooks (analysis & exploration)
+│   ├── wellpack_analysis.py
 │   └── wellpack_analysis.ipynb
 │
-├── data/                   # Raw and processed datasets
+├── data/                   # Raw datasets & Project PDFs
+│   ├── Data.csv
+│   ├── Project.pdf
+│   └── Predict'IA screenshot.pdf
 │
-├── src/                    # Python utilities (analysis, preprocessing)
-│
-├── results/                # Figures and tables generated from analysis
-│
-├── requirements.txt        # Python dependencies
 ├── .gitignore
 └── README.md
+```
+### Sub Folders 📂🌿
+```
+web/
+├─ app/
+│   ├── favicon.ico     # App icon used by the browser
+│   ├── globals.css     # Global styles for the application
+│   ├── layout.js       # Root layout (HTML structure, fonts, metadata)
+│   └── page.js         # Main homepage of the application
+│
+└─ public/
+    ├── campaigns.csv   # Dataset used by the frontend
+    ├── file.svg        # Static SVG assets
+    ├── globe.svg
+    ├── next.svg
+    ├── vercel.svg
+    └── window.svg
+
 ```
 
 ---
@@ -192,4 +214,4 @@ Thanks to the WellPack team for insights into digital marketing, campaign data, 
 
 ---
 
-# ✨ Built with curiosity, collaboration, and a lot of coffee ☕
+# ✨ Built with Curiosity, Collaboration, and a lot of Coffee ☕
