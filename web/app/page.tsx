@@ -101,7 +101,7 @@ const translations = {
 };
 
 export default function PredictIA() {
-  const [language, setLanguage] = useState<"fr" | "en">("fr");
+  const [language, setLanguage] = useState("fr");
   const [darkMode, setDarkMode] = useState(false);
   const [step, setStep] = useState(1);
   const t = translations[language];
