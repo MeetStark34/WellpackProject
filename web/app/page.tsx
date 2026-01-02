@@ -153,7 +153,7 @@ export default function PredictIA() {
           <div className="flex gap-3">
             <select
               value={language}
-              onChange={(e) => setLanguage(e.target.value as any)}
+              onChange={(e) => setLanguage(e.target.value)}
               className="px-3 py-2 rounded-lg text-sm bg-purple-600 text-white"
             >
               <option value="fr">FR</option>
