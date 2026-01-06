@@ -13,42 +13,42 @@ import { predictedTimeSlots, generatedMessages, availableSectors, availableOpera
 //  { date: '2025-01-07', time: '09:00', confidence: 70, ctr: 3.3, deliverability: 92 }
 // ];
 
-const generatedMessages = [
-  {
-    id: 1,
-    text: "NOUVEAU PROGRAMME NEUF A MARCQ-EN-BAROEUL ! APPARTEMENTS DU T1 AU T4 ELIGIBLES LOI PINEL & PTZ. RDV LES 15, 16 & 17 SEPT. https://bit.ly/3eBOTxo",
-    score: 95
-  },
-  {
-    id: 2,
-    text: "Optique BAUVE fete la Rentrée. 1 Paire de Lunettes Antireflet Lumière Bleue Achetée = la 2eme est OFFERTE! Jusqu'au 30/09/22",
-    score: 92
-  },
-  {
-    id: 3,
-    text: "De nombreuses activités au prix d'une entrée aquatique aux journées découverte du 12/09 au 25/09 dans votre Centre Aquavexin",
-    score: 89
-  }
-];
+// const generatedMessages = [
+//   {
+//     id: 1,
+//     text: "NOUVEAU PROGRAMME NEUF A MARCQ-EN-BAROEUL ! APPARTEMENTS DU T1 AU T4 ELIGIBLES LOI PINEL & PTZ. RDV LES 15, 16 & 17 SEPT. https://bit.ly/3eBOTxo",
+//     score: 95
+//   },
+//   {
+//     id: 2,
+//     text: "Optique BAUVE fete la Rentrée. 1 Paire de Lunettes Antireflet Lumière Bleue Achetée = la 2eme est OFFERTE! Jusqu'au 30/09/22",
+//     score: 92
+//   },
+//   {
+//     id: 3,
+//     text: "De nombreuses activités au prix d'une entrée aquatique aux journées découverte du 12/09 au 25/09 dans votre Centre Aquavexin",
+//     score: 89
+//   }
+// ];
 
-const availableSectors = [
-  "Technologie et Communication",
-  "Automobile et Transport",
-  "Distribution alimentaire",
-  "Santé",
-  "Immobilier",
-  "Services Professionnels et personnels",
-  "Aménagement, intérieur, travaux",
-  "Distribution non alimentaire",
-  "Sport et équipement",
-  "Habillement et joaillerie"
-];
+// const availableSectors = [
+//   "Technologie et Communication",
+//   "Automobile et Transport",
+//   "Distribution alimentaire",
+//   "Santé",
+//   "Immobilier",
+//   "Services Professionnels et personnels",
+//   "Aménagement, intérieur, travaux",
+//   "Distribution non alimentaire",
+//   "Sport et équipement",
+//   "Habillement et joaillerie"
+// ];
 
-const availableOperationTypes = [
-  "PROSPECTING",
-  "FID",
-  "B2B"
-];
+// const availableOperationTypes = [
+//   "PROSPECTING",
+//   "FID",
+//   "B2B"
+// ];
 
 const translations = {
   fr: {
