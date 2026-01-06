@@ -4,14 +4,14 @@ import { Globe, Calendar, Send, Download, Sparkles, Clock, TrendingUp, MessageSq
 
 // Import real data from campaign_data.js
 // NOTE: In your actual project, uncomment this line:
-// import { predictedTimeSlots, generatedMessages, availableSectors, availableOperationTypes } from './campaign_data.js';
+import { predictedTimeSlots, generatedMessages, availableSectors, availableOperationTypes } from './campaign_data.js';
 
 // Temporary data for demonstration (replace with import above)
-const predictedTimeSlots = [
-  { date: '2025-01-07', time: '11:00', confidence: 71, ctr: 3.5, deliverability: 93 },
-  { date: '2025-01-07', time: '10:00', confidence: 71, ctr: 3.4, deliverability: 93 },
-  { date: '2025-01-07', time: '09:00', confidence: 70, ctr: 3.3, deliverability: 92 }
-];
+// const predictedTimeSlots = [
+//  { date: '2025-01-07', time: '11:00', confidence: 71, ctr: 3.5, deliverability: 93 },
+//  { date: '2025-01-07', time: '10:00', confidence: 71, ctr: 3.4, deliverability: 93 },
+//  { date: '2025-01-07', time: '09:00', confidence: 70, ctr: 3.3, deliverability: 92 }
+// ];
 
 const generatedMessages = [
   {
