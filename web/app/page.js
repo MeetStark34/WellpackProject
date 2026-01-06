@@ -246,6 +246,7 @@ export default function PredictIAEventPrediction() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               {/* Campaign Period */}
+              {/*
               <div className="md:col-span-2">
                 <label className="block text-sm font-semibold text-slate-700 mb-3">
                   <Calendar className="w-4 h-4 inline mr-2" />
@@ -272,7 +273,7 @@ export default function PredictIAEventPrediction() {
                   </div>
                 </div>
               </div>
-
+              */}
               {/* Brand Name */}
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-2">{t.brandName}</label>
