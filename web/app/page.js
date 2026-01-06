@@ -192,6 +192,10 @@ export default function PredictIAEventPrediction() {
     a.click();
   };
 
+  const topPredictedTimeSlots = [...predictedTimeSlots]
+  .sort((a, b) => b.confidence - a.confidence)
+  .slice(0, 3);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
       {/* Header */}
@@ -439,7 +443,7 @@ export default function PredictIAEventPrediction() {
             <p className="text-slate-600 mb-6 ml-14">{t.predictionSubtitle}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {predictedTimeSlots.map((slot, index) => (
+              {topPredictedTimeSlots.map((slot, index) => (
                 <div
                   key={index}
                   className={`p-6 border-2 rounded-xl transition-all cursor-pointer ${
