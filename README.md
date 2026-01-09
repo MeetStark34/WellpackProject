@@ -183,7 +183,7 @@ jupyter notebook notebooks/wellpack_analysis.ipynb
 ---
 
 📝🧪✅ **Documentation & Quality Analyst**  
-**Harshinka Singh**  
+**Harshika Singh**  
 >🔹 Technical documentation and README structure  
 >🔹 Requirement tracking and clarity checks  
 >🔹 Result validation and quality assurance  
