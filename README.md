@@ -6,6 +6,11 @@
 
 ---
 
+<p align="center">
+  <img src="Image/image.jpeg" width="700"/>
+</p>
+---
+
 ## 📖 Overview
 
 **WellPack Prediction Event** is a hybrid **web + data science project** designed to enhance WellPack’s campaign prediction capabilities.
